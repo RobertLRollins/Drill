@@ -1,28 +1,48 @@
 extends Sprite2D
 
-var normal_speed := 150.0
+# The MovableSprite class extends Sprite2D to provide customizable motion behaviors.
+# This class encapsulates properties like speed, steering, and animation control,
+# making it easy to instantiate and manage moving sprite objects anywhere in the project.
+# By using `class_name`, MovableSprite can be referenced globally without preloading,
+# facilitating its use in various scenes and scripts for consistent and efficient movement dynamics.
+class_name MovableSprite
 
-var max_speed := normal_speed
-var velocity := Vector2(0, 0)
-var steering_factor := 10.0
-var stop_threshold := 10.0 
+# Constants and member variables
+const NORMAL_SPEED: float = 150.0
+const STEERING_FACTOR: float = 10.0
+const STOP_THRESHOLD: float = 10.0
+
+var velocity: Vector2 = Vector2.ZERO
+var max_speed: float = NORMAL_SPEED
 
 @onready var animation = $DrillAnimation
 
-
 func _process(delta: float) -> void:
-	var direction := Vector2(0, 0)
-	direction.x = Input.get_axis("move_left", "move_right")
-	direction.y = Input.get_axis("move_up", "move_down")
+	var direction = get_input_direction()
+	update_velocity_and_position(direction, delta)
+	update_animation_state(direction)
+	update_rotation()
 
+# Retrieves player input and normalizes the direction vector if needed
+func get_input_direction() -> Vector2:
+	var direction = Vector2(
+		Input.get_axis("move_left", "move_right"),
+		Input.get_axis("move_up", "move_down")
+	)
 	if direction.length() > 1.0:
 		direction = direction.normalized()
+	return direction
 
-	var desired_velocity := max_speed * direction
-	var steering_vector := desired_velocity - velocity
-	velocity += steering_vector * steering_factor * delta
+# Updates the velocity based on the desired direction and current speed
+func update_velocity_and_position(direction: Vector2, delta: float) -> void:
+	var desired_velocity = max_speed * direction
+	var steering_vector = desired_velocity - velocity
+	velocity += steering_vector * STEERING_FACTOR * delta
 	position += velocity * delta
-	if velocity.length() < stop_threshold:
+
+# Manages the state of animations and particle systems based on movement
+func update_animation_state(direction: Vector2) -> void:
+	if velocity.length() < STOP_THRESHOLD:
 		animation.stop()
 		$dirt_left.emitting = false
 		$dirt_right.emitting = false
@@ -31,5 +51,7 @@ func _process(delta: float) -> void:
 		$dirt_left.emitting = true
 		$dirt_right.emitting = true
 
-	if direction.length() > 0.0:
+# Updates the rotation to face the movement direction
+func update_rotation() -> void:
+	if velocity.length() > 0.0:
 		rotation = velocity.angle() + PI / 2
