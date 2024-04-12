@@ -1,6 +1,6 @@
 extends Sprite2D
 
-var normal_speed := 300.0
+var normal_speed := 150.0
 
 var max_speed := normal_speed
 var velocity := Vector2(0, 0)
@@ -24,8 +24,12 @@ func _process(delta: float) -> void:
 	position += velocity * delta
 	if velocity.length() < stop_threshold:
 		animation.stop()
+		$dirt_left.emitting = false
+		$dirt_right.emitting = false
 	else:
 		animation.play("move")
+		$dirt_left.emitting = true
+		$dirt_right.emitting = true
 
 	if direction.length() > 0.0:
 		rotation = velocity.angle() + PI / 2

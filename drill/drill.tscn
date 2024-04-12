@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://djkbfos7ivc5x"]
+[gd_scene load_steps=6 format=3 uid="uid://djkbfos7ivc5x"]
 
 [ext_resource type="Texture2D" uid="uid://dxv1iwj0owc4k" path="res://drill/drill-sprite-sheet.png" id="1_1ukdi"]
 [ext_resource type="Script" path="res://drill/drill.gd" id="2_dtqty"]
@@ -25,10 +25,14 @@ _data = {
 "move": SubResource("Animation_n4ipv")
 }
 
+[sub_resource type="Gradient" id="Gradient_2nxi3"]
+colors = PackedColorArray(0.376471, 0.231373, 0.0745098, 1, 0.729412, 0.470588, 0.196078, 1)
+
 [node name="Drill" type="Sprite2D"]
-position = Vector2(112, 122)
+position = Vector2(110, 186)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("1_1ukdi")
+offset = Vector2(8, -256)
 hframes = 15
 script = ExtResource("2_dtqty")
 
@@ -36,3 +40,51 @@ script = ExtResource("2_dtqty")
 libraries = {
 "": SubResource("AnimationLibrary_rg46o")
 }
+
+[node name="dirt_left" type="CPUParticles2D" parent="."]
+z_index = -1
+position = Vector2(-164, 132)
+rotation = 1.5708
+amount = 21
+lifetime = 0.5
+randomness = 1.0
+emission_shape = 1
+emission_sphere_radius = 1.0
+spread = 66.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 444.44
+initial_velocity_max = 755.98
+angular_velocity_min = -540.0
+angular_velocity_max = 540.0
+angle_min = -436.4
+angle_max = 160.0
+scale_amount_min = 3.0
+scale_amount_max = 12.0
+color = Color(0.376471, 0.231373, 0.0745098, 1)
+color_ramp = SubResource("Gradient_2nxi3")
+hue_variation_min = -1.0
+hue_variation_max = 0.35
+
+[node name="dirt_right" type="CPUParticles2D" parent="."]
+z_index = -1
+position = Vector2(164, 132)
+rotation = 1.5708
+amount = 21
+lifetime = 0.5
+randomness = 1.0
+emission_shape = 1
+emission_sphere_radius = 1.0
+spread = 66.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 444.44
+initial_velocity_max = 755.98
+angular_velocity_min = -540.0
+angular_velocity_max = 540.0
+angle_min = -436.4
+angle_max = 160.0
+scale_amount_min = 3.0
+scale_amount_max = 12.0
+color = Color(0.376471, 0.231373, 0.0745098, 1)
+color_ramp = SubResource("Gradient_2nxi3")
+hue_variation_min = -1.0
+hue_variation_max = 0.35
