@@ -26,6 +26,8 @@ _data = {
 }
 
 [node name="Drill" type="Sprite2D"]
+position = Vector2(112, 122)
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("1_1ukdi")
 hframes = 15
 script = ExtResource("2_dtqty")
