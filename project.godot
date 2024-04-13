@@ -14,6 +14,10 @@ config/name="Drill"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Global="*res://global.gd"
+
 [input]
 
 move_up={

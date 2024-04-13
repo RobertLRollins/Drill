@@ -1,5 +1,4 @@
-extends Sprite2D
-
+extends Area2D
 # The MovableSprite class extends Sprite2D to provide customizable motion behaviors.
 # This class encapsulates properties like speed, steering, and animation control,
 # making it easy to instantiate and manage moving sprite objects anywhere in the project.
@@ -14,20 +13,27 @@ const STOP_THRESHOLD: float = 15.0
 
 var velocity: Vector2 = Vector2.ZERO
 var max_speed: float = NORMAL_SPEED
-var total_distance: float = 0.0
+var last_multiple_600 = 0
 
-@onready var animation = $DrillAnimation
-@onready var distance_label = $"../DistanceLabel"
+@onready var animation = $Sprite2D/DrillAnimation
+@onready var distance_label = get_node("../DistanceLabel")
+@onready var coal_label = get_node("../CoalLabel")
+
+func _ready() -> void:
+	# Initialize last_multiple_600 to the nearest lower multiple of 600 of the starting total_distance
+	last_multiple_600 = int(Global.total_distance / 600) * 600
 
 func _process(delta: float) -> void:
 	var direction = get_input_direction()
 	update_velocity_and_position(direction, delta)
-	update_animation_state()
+	update_animation_state(direction)
 	update_rotation()
 	update_distance_display()  # Call to update the label
 
+
 func update_distance_display() -> void:
-	distance_label.text = "Distance: " + str(total_distance) + " units"
+	distance_label.text = "Distance: " + str(Global.total_distance) + " units"
+
 
 # Retrieves player input and normalizes the direction vector if needed
 func get_input_direction() -> Vector2:
@@ -46,18 +52,24 @@ func update_velocity_and_position(direction: Vector2, delta: float) -> void:
 	var steering_vector = desired_velocity - velocity
 	velocity += steering_vector * STEERING_FACTOR * delta
 	position += velocity * delta
-	total_distance += (position - previous_position).length()
-
+	Global.total_distance += (position - previous_position).length()
+	
+	# Check if we've passed a multiple of 600
+	if int(Global.total_distance / 600) * 600 != last_multiple_600:
+		last_multiple_600 = int(Global.total_distance / 600) * 600
+		Global.total_coal -= 1  # Decrease coal count
+		coal_label.text = "Coal: " + str(Global.total_coal)
+		
 # Manages the state of animations and particle systems based on movement
-func update_animation_state() -> void:
+func update_animation_state(direction: Vector2) -> void:
 	if velocity.length() < STOP_THRESHOLD:
 		animation.stop()
-		$dirt_left.emitting = false
-		$dirt_right.emitting = false
+		$Sprite2D/dirt_left.emitting = false
+		$Sprite2D/dirt_right.emitting = false
 	else:
 		animation.play("move")
-		$dirt_left.emitting = true
-		$dirt_right.emitting = true
+		$Sprite2D/dirt_left.emitting = true
+		$Sprite2D/dirt_right.emitting = true
 
 # Updates the rotation to face the movement direction
 func update_rotation() -> void:
