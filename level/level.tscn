@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://bj6q0d5ob76j6"]
+
+[ext_resource type="PackedScene" uid="uid://djkbfos7ivc5x" path="res://drill/drill.tscn" id="1_u1s68"]
+
+[node name="level" type="Node2D"]
+
+[node name="Drill" parent="." instance=ExtResource("1_u1s68")]
+position = Vector2(234, 273)
+
+[node name="DistanceLabel" type="Label" parent="."]
+offset_left = 21.0
+offset_top = 16.0
+offset_right = 61.0
+offset_bottom = 39.0

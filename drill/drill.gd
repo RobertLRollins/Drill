@@ -14,14 +14,20 @@ const STOP_THRESHOLD: float = 15.0
 
 var velocity: Vector2 = Vector2.ZERO
 var max_speed: float = NORMAL_SPEED
+var total_distance: float = 0.0
 
 @onready var animation = $DrillAnimation
+@onready var distance_label = $"../DistanceLabel"
 
 func _process(delta: float) -> void:
 	var direction = get_input_direction()
 	update_velocity_and_position(direction, delta)
-	update_animation_state(direction)
+	update_animation_state()
 	update_rotation()
+	update_distance_display()  # Call to update the label
+
+func update_distance_display() -> void:
+	distance_label.text = "Distance: " + str(total_distance) + " units"
 
 # Retrieves player input and normalizes the direction vector if needed
 func get_input_direction() -> Vector2:
@@ -35,13 +41,15 @@ func get_input_direction() -> Vector2:
 
 # Updates the velocity based on the desired direction and current speed
 func update_velocity_and_position(direction: Vector2, delta: float) -> void:
+	var previous_position = position
 	var desired_velocity = max_speed * direction
 	var steering_vector = desired_velocity - velocity
 	velocity += steering_vector * STEERING_FACTOR * delta
 	position += velocity * delta
+	total_distance += (position - previous_position).length()
 
 # Manages the state of animations and particle systems based on movement
-func update_animation_state(direction: Vector2) -> void:
+func update_animation_state() -> void:
 	if velocity.length() < STOP_THRESHOLD:
 		animation.stop()
 		$dirt_left.emitting = false
