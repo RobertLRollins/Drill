@@ -10,7 +10,7 @@ class_name MovableSprite
 # Constants and member variables
 const NORMAL_SPEED: float = 150.0
 const STEERING_FACTOR: float = 10.0
-const STOP_THRESHOLD: float = 10.0
+const STOP_THRESHOLD: float = 15.0
 
 var velocity: Vector2 = Vector2.ZERO
 var max_speed: float = NORMAL_SPEED
