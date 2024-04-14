@@ -1,10 +1,4 @@
 extends Area2D
-# The MovableSprite class extends Sprite2D to provide customizable motion behaviors.
-# This class encapsulates properties like speed, steering, and animation control,
-# making it easy to instantiate and manage moving sprite objects anywhere in the project.
-# By using `class_name`, MovableSprite can be referenced globally without preloading,
-# facilitating its use in various scenes and scripts for consistent and efficient movement dynamics.
-class_name MovableSprite
 
 # Constants and member variables
 const NORMAL_SPEED: float = 150.0
@@ -16,8 +10,8 @@ var max_speed: float = NORMAL_SPEED
 var last_multiple_600 = 0
 
 @onready var animation = $Sprite2D/DrillAnimation
-@onready var distance_label = get_node("../DistanceLabel")
-@onready var coal_label = get_node("../CoalLabel")
+@onready var distance_label = $"../DistanceLabel"
+@onready var coal_label = $"../CoalLabel"
 
 func _ready() -> void:
 	# Initialize last_multiple_600 to the nearest lower multiple of 600 of the starting total_distance
@@ -28,7 +22,7 @@ func _process(delta: float) -> void:
 	update_velocity_and_position(direction, delta)
 	update_animation_state(direction)
 	update_rotation()
-	update_distance_display()  # Call to update the label
+	update_distance_display()
 
 
 func update_distance_display() -> void:

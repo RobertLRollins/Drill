@@ -4,6 +4,9 @@
 [ext_resource type="Script" path="res://drill/drill.gd" id="2_dtqty"]
 [ext_resource type="Texture2D" uid="uid://duj0feso8socp" path="res://drill/smoke.png" id="3_tvv1o"]
 
+[sub_resource type="Animation" id="Animation_7hbwe"]
+length = 0.001
+
 [sub_resource type="Animation" id="Animation_n4ipv"]
 resource_name = "move"
 loop_mode = 1
@@ -20,9 +23,6 @@ tracks/0/keys = {
 "update": 0,
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
 }
-
-[sub_resource type="Animation" id="Animation_7hbwe"]
-length = 0.001
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rg46o"]
 _data = {
