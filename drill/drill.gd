@@ -26,7 +26,7 @@ func _process(delta: float) -> void:
 
 
 func update_distance_display() -> void:
-	distance_label.text = "Distance: " + str(Global.total_distance) + " units"
+	distance_label.text = "Distance: " + str(Global.total_distance)
 
 
 # Retrieves player input and normalizes the direction vector if needed

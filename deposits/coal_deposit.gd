@@ -11,7 +11,7 @@ func _on_area_entered(area_that_entered: Area2D) -> void:
 	coal_label.text = "Coal: " + str(Global.total_coal)
 	
 	var explosion_scene = load("res://deposits/explosion_particles.tscn")
-	var new_node = explosion_scene. instantiate()
+	var new_node = explosion_scene.instantiate()
 	new_node.position = self.position
 	new_node.emitting = true
 	self.get_parent().add_child(new_node)
