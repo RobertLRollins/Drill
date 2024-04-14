@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bj46uv1rja4cc"
-path="res://.godot/imported/steam-drill-sprite-sheet.png-7f2bbf555a58ec7aa9c8cd90f3fe204e.ctex"
+path="res://.godot/imported/steam-drill-sprite-sheet.png-330458019abbc8030a2cf199f6df1e92.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://drill/steam-drill-sprite-sheet.png"
-dest_files=["res://.godot/imported/steam-drill-sprite-sheet.png-7f2bbf555a58ec7aa9c8cd90f3fe204e.ctex"]
+source_file="res://Drill/steam-drill-sprite-sheet.png"
+dest_files=["res://.godot/imported/steam-drill-sprite-sheet.png-330458019abbc8030a2cf199f6df1e92.ctex"]
 
 [params]
 

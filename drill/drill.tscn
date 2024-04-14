@@ -1,8 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://djkbfos7ivc5x"]
+[gd_scene load_steps=17 format=3 uid="uid://djkbfos7ivc5x"]
 
-[ext_resource type="Texture2D" uid="uid://bj46uv1rja4cc" path="res://drill/steam-drill-sprite-sheet.png" id="1_a37hl"]
-[ext_resource type="Script" path="res://drill/drill.gd" id="2_dtqty"]
-[ext_resource type="Texture2D" uid="uid://duj0feso8socp" path="res://drill/smoke.png" id="3_tvv1o"]
+[ext_resource type="Texture2D" uid="uid://bj46uv1rja4cc" path="res://Drill/steam-drill-sprite-sheet.png" id="1_a37hl"]
+[ext_resource type="Script" path="res://Drill/drill.gd" id="2_dtqty"]
+[ext_resource type="Texture2D" uid="uid://duj0feso8socp" path="res://Drill/smoke.png" id="3_tvv1o"]
+[ext_resource type="Script" path="res://Inventory/inventory.gd" id="4_vdcfv"]
+[ext_resource type="PackedScene" uid="uid://csv4uprj8a4mb" path="res://Inventory/inventory_slot.tscn" id="5_v4jo5"]
 
 [sub_resource type="Animation" id="Animation_7hbwe"]
 length = 0.001
@@ -63,6 +65,9 @@ turbulence_noise_scale = 5.316
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p2ftr"]
 radius = 14.037
+
+[sub_resource type="LabelSettings" id="LabelSettings_f1r3p"]
+font_size = 18
 
 [node name="Drill" type="Area2D"]
 position = Vector2(110, 186)
@@ -137,3 +142,96 @@ explosiveness = 1.0
 position = Vector2(0, -60)
 scale = Vector2(17.2676, 30.5507)
 shape = SubResource("CircleShape2D_p2ftr")
+
+[node name="Inventory" type="Node" parent="."]
+script = ExtResource("4_vdcfv")
+
+[node name="InventoryWindow" type="Panel" parent="Inventory"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -280.0
+offset_top = -184.0
+offset_right = 280.0
+offset_bottom = 184.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SlotContainer" type="GridContainer" parent="Inventory/InventoryWindow"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -260.0
+offset_top = -163.725
+offset_right = 260.0
+offset_bottom = 148.275
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 5
+
+[node name="InventorySlot" parent="Inventory/InventoryWindow/SlotContainer" instance=ExtResource("5_v4jo5")]
+layout_mode = 2
+
+[node name="InventorySlot2" parent="Inventory/InventoryWindow/SlotContainer" instance=ExtResource("5_v4jo5")]
+layout_mode = 2
+
+[node name="InventorySlot3" parent="Inventory/InventoryWindow/SlotContainer" instance=ExtResource("5_v4jo5")]
+layout_mode = 2
+
+[node name="InventorySlot4" parent="Inventory/InventoryWindow/SlotContainer" instance=ExtResource("5_v4jo5")]
+layout_mode = 2
+
+[node name="InventorySlot5" parent="Inventory/InventoryWindow/SlotContainer" instance=ExtResource("5_v4jo5")]
+layout_mode = 2
+
+[node name="InventorySlot6" parent="Inventory/InventoryWindow/SlotContainer" instance=ExtResource("5_v4jo5")]
+layout_mode = 2
+
+[node name="InventorySlot7" parent="Inventory/InventoryWindow/SlotContainer" instance=ExtResource("5_v4jo5")]
+layout_mode = 2
+
+[node name="InventorySlot8" parent="Inventory/InventoryWindow/SlotContainer" instance=ExtResource("5_v4jo5")]
+layout_mode = 2
+
+[node name="InventorySlot9" parent="Inventory/InventoryWindow/SlotContainer" instance=ExtResource("5_v4jo5")]
+layout_mode = 2
+
+[node name="InventorySlot10" parent="Inventory/InventoryWindow/SlotContainer" instance=ExtResource("5_v4jo5")]
+layout_mode = 2
+
+[node name="InventorySlot11" parent="Inventory/InventoryWindow/SlotContainer" instance=ExtResource("5_v4jo5")]
+layout_mode = 2
+
+[node name="InventorySlot12" parent="Inventory/InventoryWindow/SlotContainer" instance=ExtResource("5_v4jo5")]
+layout_mode = 2
+
+[node name="InventorySlot13" parent="Inventory/InventoryWindow/SlotContainer" instance=ExtResource("5_v4jo5")]
+layout_mode = 2
+
+[node name="InventorySlot14" parent="Inventory/InventoryWindow/SlotContainer" instance=ExtResource("5_v4jo5")]
+layout_mode = 2
+
+[node name="InventorySlot15" parent="Inventory/InventoryWindow/SlotContainer" instance=ExtResource("5_v4jo5")]
+layout_mode = 2
+
+[node name="InfoText" type="Label" parent="Inventory/InventoryWindow"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -32.535
+offset_bottom = -6.535
+grow_horizontal = 2
+grow_vertical = 0
+text = "Contain Info About The Selected Item"
+label_settings = SubResource("LabelSettings_f1r3p")
+horizontal_alignment = 1
+vertical_alignment = 1

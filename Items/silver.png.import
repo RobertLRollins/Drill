@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://duj0feso8socp"
-path="res://.godot/imported/smoke.png-4dfdbb8190264c9660edd702a333f2b1.ctex"
+uid="uid://cm68drhyej18b"
+path="res://.godot/imported/silver.png-14a344054e700ff3c59215019aecb707.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Drill/smoke.png"
-dest_files=["res://.godot/imported/smoke.png-4dfdbb8190264c9660edd702a333f2b1.ctex"]
+source_file="res://Items/silver.png"
+dest_files=["res://.godot/imported/silver.png-14a344054e700ff3c59215019aecb707.ctex"]
 
 [params]
 

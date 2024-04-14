@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://droey66h0iyfo"]
+
+[ext_resource type="Texture2D" uid="uid://btype4ons1hiq" path="res://Items/coal.png" id="1_j7np1"]
+[ext_resource type="Script" path="res://Items/item.gd" id="1_wi0i7"]
+
+[resource]
+script = ExtResource("1_wi0i7")
+display_name = "Coal"
+icon = ExtResource("1_j7np1")
+max_stack_size = 64
