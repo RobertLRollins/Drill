@@ -1,10 +1,12 @@
-[gd_scene load_steps=17 format=3 uid="uid://djkbfos7ivc5x"]
+[gd_scene load_steps=19 format=3 uid="uid://djkbfos7ivc5x"]
 
 [ext_resource type="Texture2D" uid="uid://bj46uv1rja4cc" path="res://Drill/steam-drill-sprite-sheet.png" id="1_a37hl"]
 [ext_resource type="Script" path="res://Drill/drill.gd" id="2_dtqty"]
 [ext_resource type="Texture2D" uid="uid://duj0feso8socp" path="res://Drill/smoke.png" id="3_tvv1o"]
 [ext_resource type="Script" path="res://Inventory/inventory.gd" id="4_vdcfv"]
 [ext_resource type="PackedScene" uid="uid://csv4uprj8a4mb" path="res://Inventory/inventory_slot.tscn" id="5_v4jo5"]
+[ext_resource type="Resource" uid="uid://droey66h0iyfo" path="res://Items/coal.tres" id="5_y7bq1"]
+[ext_resource type="Resource" uid="uid://bry1ja82k2xbq" path="res://Items/iron.tres" id="6_30ido"]
 
 [sub_resource type="Animation" id="Animation_7hbwe"]
 length = 0.001
@@ -145,6 +147,7 @@ shape = SubResource("CircleShape2D_p2ftr")
 
 [node name="Inventory" type="Node" parent="."]
 script = ExtResource("4_vdcfv")
+starter_items = Array[Resource("res://Items/item.gd")]([ExtResource("5_y7bq1"), ExtResource("6_30ido"), ExtResource("6_30ido"), ExtResource("5_y7bq1"), ExtResource("5_y7bq1")])
 
 [node name="InventoryWindow" type="Panel" parent="Inventory"]
 anchors_preset = 8
@@ -231,7 +234,6 @@ offset_top = -32.535
 offset_bottom = -6.535
 grow_horizontal = 2
 grow_vertical = 0
-text = "Contain Info About The Selected Item"
 label_settings = SubResource("LabelSettings_f1r3p")
 horizontal_alignment = 1
 vertical_alignment = 1
