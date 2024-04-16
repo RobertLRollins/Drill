@@ -14,6 +14,9 @@ func _ready ():
 		child.set_item(null)
 		child.inventory = self
 	
+	Global.on_give_player_item.connect(on_give_player_item)
+	Global.on_remove_player_item.connect(on_remove_player_item)
+	
 	for item in starter_items:
 		add_item(item)
 
@@ -44,11 +47,15 @@ func add_item (item : Item):
 	elif slot.item == item:
 		slot.add_item()
 
+func on_remove_player_item (item : Item, amount : int):
+	for i in range(amount):
+		remove_item(item)
+
 func remove_item (item : Item):
 	var slot = get_slot_to_remove(item)
 	
-	if slot == null or slot.item ==item:
-		return
+	#if slot == null or slot.item == item:
+		#return
 	
 	slot.remove_item()
 

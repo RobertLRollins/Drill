@@ -53,6 +53,9 @@ func update_velocity_and_position(direction: Vector2, delta: float) -> void:
 		last_multiple_600 = int(Global.total_distance / 600) * 600
 		Global.total_coal -= 1  # Decrease coal count
 		coal_label.text = "Coal: " + str(Global.total_coal)
+		var item_name : String = "coal"
+		var item = load("res://Items/Item Data/" + item_name + ".tres")
+		Global.on_remove_player_item.emit(item, 1)
 		
 # Manages the state of animations and particle systems based on movement
 func update_animation_state(direction: Vector2) -> void:

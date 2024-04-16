@@ -4,9 +4,9 @@
 [ext_resource type="Script" path="res://Drill/drill.gd" id="2_dtqty"]
 [ext_resource type="Texture2D" uid="uid://duj0feso8socp" path="res://Drill/smoke.png" id="3_tvv1o"]
 [ext_resource type="Script" path="res://Inventory/inventory.gd" id="4_vdcfv"]
+[ext_resource type="Resource" uid="uid://droey66h0iyfo" path="res://Items/Item Data/coal.tres" id="5_di1x6"]
 [ext_resource type="PackedScene" uid="uid://csv4uprj8a4mb" path="res://Inventory/inventory_slot.tscn" id="5_v4jo5"]
-[ext_resource type="Resource" uid="uid://droey66h0iyfo" path="res://Items/coal.tres" id="5_y7bq1"]
-[ext_resource type="Resource" uid="uid://bry1ja82k2xbq" path="res://Items/iron.tres" id="6_30ido"]
+[ext_resource type="Resource" uid="uid://bry1ja82k2xbq" path="res://Items/Item Data/iron.tres" id="6_hv1ad"]
 
 [sub_resource type="Animation" id="Animation_7hbwe"]
 length = 0.001
@@ -147,7 +147,7 @@ shape = SubResource("CircleShape2D_p2ftr")
 
 [node name="Inventory" type="Node" parent="."]
 script = ExtResource("4_vdcfv")
-starter_items = Array[Resource("res://Items/item.gd")]([ExtResource("5_y7bq1"), ExtResource("6_30ido"), ExtResource("6_30ido"), ExtResource("5_y7bq1"), ExtResource("5_y7bq1")])
+starter_items = Array[Resource("res://Items/item.gd")]([ExtResource("5_di1x6"), ExtResource("6_hv1ad"), ExtResource("6_hv1ad"), ExtResource("5_di1x6"), ExtResource("5_di1x6")])
 
 [node name="InventoryWindow" type="Panel" parent="Inventory"]
 anchors_preset = 8

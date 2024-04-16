@@ -7,7 +7,7 @@
 [node name="Level" type="Node2D"]
 
 [node name="Drill" parent="." instance=ExtResource("1_u1s68")]
-position = Vector2(329, 307)
+position = Vector2(160, 422)
 
 [node name="CoalDeposit" parent="." instance=ExtResource("2_qh822")]
 position = Vector2(907, 158)
@@ -16,6 +16,10 @@ scale = Vector2(0.155, 0.155)
 
 [node name="CoalDeposit2" parent="." instance=ExtResource("2_qh822")]
 position = Vector2(1009, 545)
+scale = Vector2(0.155, 0.155)
+
+[node name="CoalDeposit3" parent="." instance=ExtResource("2_qh822")]
+position = Vector2(447, 530)
 scale = Vector2(0.155, 0.155)
 
 [node name="DistanceLabel" type="Label" parent="."]
