@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://uy0cv0sgblxh"]
+
+[ext_resource type="Script" path="res://Deposits/other_deposit.gd" id="1_r6s6t"]
+[ext_resource type="Texture2D" uid="uid://btvieuwlk46sj" path="res://Deposits/iron_deposit.png" id="2_hx7og"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cabh7"]
+radius = 360.235
+
+[node name="IronDeposit" type="Area2D"]
+script = ExtResource("1_r6s6t")
+item_name = "iron"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_hx7og")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_cabh7")

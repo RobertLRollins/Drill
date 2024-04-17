@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://djkbfos7ivc5x"]
+[gd_scene load_steps=22 format=3 uid="uid://djkbfos7ivc5x"]
 
 [ext_resource type="Texture2D" uid="uid://bj46uv1rja4cc" path="res://Drill/steam-drill-sprite-sheet.png" id="1_a37hl"]
 [ext_resource type="Script" path="res://Drill/drill.gd" id="2_dtqty"]
@@ -7,6 +7,9 @@
 [ext_resource type="Resource" uid="uid://droey66h0iyfo" path="res://Items/Item Data/coal.tres" id="5_di1x6"]
 [ext_resource type="PackedScene" uid="uid://csv4uprj8a4mb" path="res://Inventory/inventory_slot.tscn" id="5_v4jo5"]
 [ext_resource type="Resource" uid="uid://bry1ja82k2xbq" path="res://Items/Item Data/iron.tres" id="6_hv1ad"]
+[ext_resource type="PackedScene" uid="uid://c3a4sgjg56k7j" path="res://Crafting System/crafting_recipe_ui.tscn" id="8_fur7t"]
+[ext_resource type="Script" path="res://Crafting System/crafting.gd" id="8_jfupr"]
+[ext_resource type="Resource" uid="uid://cemaoa6w6nka6" path="res://Crafting System/Recipes/knife.tres" id="10_lwwgy"]
 
 [sub_resource type="Animation" id="Animation_7hbwe"]
 length = 0.001
@@ -237,3 +240,31 @@ grow_vertical = 0
 label_settings = SubResource("LabelSettings_f1r3p")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Crafting" type="Node" parent="."]
+script = ExtResource("8_jfupr")
+crafting_recipe_ui_scene = ExtResource("8_fur7t")
+recipes = Array[Resource("res://Crafting System/crafting_recipe.gd")]([ExtResource("10_lwwgy")])
+
+[node name="CraftingWindow" type="Panel" parent="Crafting"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -250.0
+offset_right = 250.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RecipeContainer" type="VBoxContainer" parent="Crafting/CraftingWindow"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_right = -8.0
+grow_horizontal = 2
+grow_vertical = 2

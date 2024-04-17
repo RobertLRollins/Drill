@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://ch8br5p40e2hn"]
+
+[ext_resource type="Script" path="res://Items/item.gd" id="1_03m1s"]
+[ext_resource type="Texture2D" uid="uid://dvrlx54pwiae4" path="res://Items/knife.png" id="1_d4jy2"]
+
+[resource]
+script = ExtResource("1_03m1s")
+display_name = "Knife"
+icon = ExtResource("1_d4jy2")
+max_stack_size = 64

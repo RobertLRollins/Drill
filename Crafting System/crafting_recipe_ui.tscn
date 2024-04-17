@@ -1,0 +1,57 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3a4sgjg56k7j"]
+
+[ext_resource type="Script" path="res://Crafting System/crafting_recipe_ui.gd" id="1_16ood"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ofglt"]
+
+[node name="CraftingRecipeUI" type="Panel"]
+custom_minimum_size = Vector2(0, 80)
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 68.0
+grow_horizontal = 2
+script = ExtResource("1_16ood")
+
+[node name="ItemIcon" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 8.0
+offset_top = -32.0
+offset_right = 72.0
+offset_bottom = 32.0
+grow_vertical = 2
+texture = SubResource("PlaceholderTexture2D_ofglt")
+expand_mode = 1
+
+[node name="RecipeText" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 85.0
+offset_top = -31.0
+offset_right = 309.0
+offset_bottom = 31.0
+grow_vertical = 2
+text = "Iron Knife
+x1 Iron"
+vertical_alignment = 1
+
+[node name="CraftButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -93.0
+offset_top = -15.0
+offset_right = -29.0
+offset_bottom = 16.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "Craft"
+
+[connection signal="pressed" from="CraftButton" to="." method="_on_craft_button_pressed"]

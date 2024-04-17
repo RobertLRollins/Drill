@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://b8ru7rbolrbti"]
+[gd_scene load_steps=5 format=3 uid="uid://b8ru7rbolrbti"]
 
 [ext_resource type="PackedScene" uid="uid://djkbfos7ivc5x" path="res://Drill/drill.tscn" id="1_u1s68"]
 [ext_resource type="PackedScene" uid="uid://ckqsone2qk0by" path="res://Deposits/coal_deposit.tscn" id="2_qh822"]
 [ext_resource type="Texture2D" uid="uid://bgvl4fj1e3x3r" path="res://Level/ground.tga" id="3_xkkt5"]
+[ext_resource type="PackedScene" uid="uid://uy0cv0sgblxh" path="res://Deposits/iron_deposit.tscn" id="4_yhvyk"]
 
 [node name="Level" type="Node2D"]
 
@@ -10,7 +11,7 @@
 position = Vector2(160, 422)
 
 [node name="CoalDeposit" parent="." instance=ExtResource("2_qh822")]
-position = Vector2(907, 158)
+position = Vector2(564, 107)
 rotation = 2.03505
 scale = Vector2(0.155, 0.155)
 
@@ -19,7 +20,7 @@ position = Vector2(1009, 545)
 scale = Vector2(0.155, 0.155)
 
 [node name="CoalDeposit3" parent="." instance=ExtResource("2_qh822")]
-position = Vector2(447, 530)
+position = Vector2(424, 429)
 scale = Vector2(0.155, 0.155)
 
 [node name="DistanceLabel" type="Label" parent="."]
@@ -65,3 +66,11 @@ texture = ExtResource("3_xkkt5")
 z_index = -2
 position = Vector2(1274, 762)
 texture = ExtResource("3_xkkt5")
+
+[node name="IronDeposit" parent="." instance=ExtResource("4_yhvyk")]
+position = Vector2(890, 197)
+scale = Vector2(0.155, 0.155)
+
+[node name="IronDeposit2" parent="." instance=ExtResource("4_yhvyk")]
+position = Vector2(742, 511)
+scale = Vector2(0.155, 0.155)
