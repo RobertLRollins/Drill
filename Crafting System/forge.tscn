@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://do5dhx13sqrwq"]
+
+[ext_resource type="Script" path="res://Crafting System/forge.gd" id="1_lm15t"]
+[ext_resource type="Texture2D" uid="uid://bxmsmjx2i7ee1" path="res://Crafting System/anvil.png" id="1_lyrl2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qd7k3"]
+radius = 282.044
+
+[node name="Forge" type="Area2D"]
+script = ExtResource("1_lm15t")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_lyrl2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-13, 33)
+shape = SubResource("CircleShape2D_qd7k3")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

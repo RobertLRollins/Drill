@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://b8ru7rbolrbti"]
+[gd_scene load_steps=6 format=3 uid="uid://b8ru7rbolrbti"]
 
 [ext_resource type="PackedScene" uid="uid://djkbfos7ivc5x" path="res://Drill/drill.tscn" id="1_u1s68"]
 [ext_resource type="PackedScene" uid="uid://ckqsone2qk0by" path="res://Deposits/coal_deposit.tscn" id="2_qh822"]
 [ext_resource type="Texture2D" uid="uid://bgvl4fj1e3x3r" path="res://Level/ground.tga" id="3_xkkt5"]
 [ext_resource type="PackedScene" uid="uid://uy0cv0sgblxh" path="res://Deposits/iron_deposit.tscn" id="4_yhvyk"]
+[ext_resource type="PackedScene" uid="uid://do5dhx13sqrwq" path="res://Crafting System/forge.tscn" id="5_slo5h"]
 
 [node name="Level" type="Node2D"]
 
@@ -13,14 +14,6 @@ position = Vector2(160, 422)
 [node name="CoalDeposit" parent="." instance=ExtResource("2_qh822")]
 position = Vector2(564, 107)
 rotation = 2.03505
-scale = Vector2(0.155, 0.155)
-
-[node name="CoalDeposit2" parent="." instance=ExtResource("2_qh822")]
-position = Vector2(1009, 545)
-scale = Vector2(0.155, 0.155)
-
-[node name="CoalDeposit3" parent="." instance=ExtResource("2_qh822")]
-position = Vector2(424, 429)
 scale = Vector2(0.155, 0.155)
 
 [node name="DistanceLabel" type="Label" parent="."]
@@ -37,40 +30,42 @@ offset_right = 333.0
 offset_bottom = 23.0
 theme_override_font_sizes/font_size = 30
 
-[node name="Trak2Crete1d" type="Sprite2D" parent="."]
+[node name="IronDeposit" parent="." instance=ExtResource("4_yhvyk")]
+position = Vector2(500, 412)
+scale = Vector2(0.155, 0.155)
+
+[node name="Forge" parent="." instance=ExtResource("5_slo5h")]
+position = Vector2(998, 438)
+scale = Vector2(0.36, 0.36)
+
+[node name="Ground" type="Node" parent="."]
+
+[node name="Trak2Crete1d" type="Sprite2D" parent="Ground"]
 z_index = -2
 position = Vector2(250, 250)
 texture = ExtResource("3_xkkt5")
 
-[node name="Trak2Crete1d2" type="Sprite2D" parent="."]
+[node name="Trak2Crete1d2" type="Sprite2D" parent="Ground"]
 z_index = -2
 position = Vector2(762, 250)
 texture = ExtResource("3_xkkt5")
 
-[node name="Trak2Crete1d3" type="Sprite2D" parent="."]
+[node name="Trak2Crete1d3" type="Sprite2D" parent="Ground"]
 z_index = -2
 position = Vector2(1274, 250)
 texture = ExtResource("3_xkkt5")
 
-[node name="Trak2Crete1d4" type="Sprite2D" parent="."]
+[node name="Trak2Crete1d4" type="Sprite2D" parent="Ground"]
 z_index = -2
 position = Vector2(250, 762)
 texture = ExtResource("3_xkkt5")
 
-[node name="Trak2Crete1d5" type="Sprite2D" parent="."]
+[node name="Trak2Crete1d5" type="Sprite2D" parent="Ground"]
 z_index = -2
 position = Vector2(762, 762)
 texture = ExtResource("3_xkkt5")
 
-[node name="Trak2Crete1d6" type="Sprite2D" parent="."]
+[node name="Trak2Crete1d6" type="Sprite2D" parent="Ground"]
 z_index = -2
 position = Vector2(1274, 762)
 texture = ExtResource("3_xkkt5")
-
-[node name="IronDeposit" parent="." instance=ExtResource("4_yhvyk")]
-position = Vector2(890, 197)
-scale = Vector2(0.155, 0.155)
-
-[node name="IronDeposit2" parent="." instance=ExtResource("4_yhvyk")]
-position = Vector2(742, 511)
-scale = Vector2(0.155, 0.155)

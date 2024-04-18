@@ -23,6 +23,9 @@ func _process(delta: float) -> void:
 	update_animation_state(direction)
 	update_rotation()
 	update_distance_display()
+	
+	if Global.total_coal < 1:
+		max_speed == 0
 
 
 func update_distance_display() -> void:
