@@ -25,7 +25,7 @@ func _process(delta: float) -> void:
 	update_distance_display()
 	
 	if Global.total_coal < 1:
-		max_speed == 0
+		max_speed = 0
 
 
 func update_distance_display() -> void:
