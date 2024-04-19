@@ -29,8 +29,12 @@ func craft(recipe: CraftingRecipe):
 			if req.item.resource_path == "res://Items/Item Data/coal.tres":
 				Global.total_coal -= 1
 				coal_label.text = "Coal: " + str(Global.total_coal)
+				
 	
 	inventory.add_item(recipe.item)
+	if Global.total_coal < 1:
+		Global.max_speed = 0
+		Global.calculate_total_points($"../Inventory")
 	open()
 
 func _process(delta):

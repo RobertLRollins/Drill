@@ -8,3 +8,4 @@ script = ExtResource("1_03m1s")
 display_name = "Knife"
 icon = ExtResource("1_d4jy2")
 max_stack_size = 64
+points = 3

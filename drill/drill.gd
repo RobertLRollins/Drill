@@ -6,7 +6,6 @@ const STEERING_FACTOR: float = 10.0
 const STOP_THRESHOLD: float = 15.0
 
 var velocity: Vector2 = Vector2.ZERO
-var max_speed: float = NORMAL_SPEED
 var last_multiple_600 = 0
 
 @onready var animation = $Sprite2D/DrillAnimation
@@ -14,6 +13,7 @@ var last_multiple_600 = 0
 @onready var coal_label = $"../CoalLabel"
 
 func _ready() -> void:
+	Global.max_speed = NORMAL_SPEED
 	# Initialize last_multiple_600 to the nearest lower multiple of 600 of the starting total_distance
 	last_multiple_600 = int(Global.total_distance / 600) * 600
 
@@ -23,9 +23,6 @@ func _process(delta: float) -> void:
 	update_animation_state(direction)
 	update_rotation()
 	update_distance_display()
-	
-	if Global.total_coal < 1:
-		max_speed = 0
 
 
 func update_distance_display() -> void:
@@ -45,7 +42,7 @@ func get_input_direction() -> Vector2:
 # Updates the velocity based on the desired direction and current speed
 func update_velocity_and_position(direction: Vector2, delta: float) -> void:
 	var previous_position = position
-	var desired_velocity = max_speed * direction
+	var desired_velocity = Global.max_speed * direction
 	var steering_vector = desired_velocity - velocity
 	velocity += steering_vector * STEERING_FACTOR * delta
 	position += velocity * delta
@@ -59,6 +56,9 @@ func update_velocity_and_position(direction: Vector2, delta: float) -> void:
 		var item_name : String = "coal"
 		var item = load("res://Items/Item Data/" + item_name + ".tres")
 		Global.on_remove_player_item.emit(item, 1)
+		if Global.total_coal < 1:
+				Global.max_speed = 0
+				Global.calculate_total_points($Inventory)
 		
 # Manages the state of animations and particle systems based on movement
 func update_animation_state(direction: Vector2) -> void:

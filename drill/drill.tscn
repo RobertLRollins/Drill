@@ -9,7 +9,7 @@
 [ext_resource type="Resource" uid="uid://bry1ja82k2xbq" path="res://Items/Item Data/iron.tres" id="6_hv1ad"]
 [ext_resource type="PackedScene" uid="uid://c3a4sgjg56k7j" path="res://Crafting System/crafting_recipe_ui.tscn" id="8_fur7t"]
 [ext_resource type="Script" path="res://Crafting System/crafting.gd" id="8_jfupr"]
-[ext_resource type="Resource" uid="uid://cemaoa6w6nka6" path="res://Crafting System/Recipes/knife.tres" id="10_lwwgy"]
+[ext_resource type="Resource" uid="uid://cemaoa6w6nka6" path="res://Crafting System/Recipes/knife_recipe.tres" id="10_lwwgy"]
 
 [sub_resource type="Animation" id="Animation_7hbwe"]
 length = 0.001
