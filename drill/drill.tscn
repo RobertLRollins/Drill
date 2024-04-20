@@ -77,6 +77,7 @@ font_size = 18
 [node name="Drill" type="Area2D"]
 position = Vector2(110, 186)
 scale = Vector2(0.25, 0.25)
+disable_mode = 1
 script = ExtResource("2_dtqty")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -148,11 +149,13 @@ position = Vector2(0, -60)
 scale = Vector2(17.2676, 30.5507)
 shape = SubResource("CircleShape2D_p2ftr")
 
-[node name="Inventory" type="Node" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Inventory" type="Node" parent="CanvasLayer"]
 script = ExtResource("4_vdcfv")
 starter_items = Array[Resource("res://Items/item.gd")]([ExtResource("5_di1x6"), ExtResource("6_hv1ad"), ExtResource("6_hv1ad"), ExtResource("5_di1x6"), ExtResource("5_di1x6")])
 
-[node name="InventoryWindow" type="Panel" parent="Inventory"]
+[node name="InventoryWindow" type="Panel" parent="CanvasLayer/Inventory"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -164,8 +167,9 @@ offset_right = 280.0
 offset_bottom = 184.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
-[node name="SlotContainer" type="GridContainer" parent="Inventory/InventoryWindow"]
+[node name="SlotContainer" type="GridContainer" parent="CanvasLayer/Inventory/InventoryWindow"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -182,52 +186,52 @@ theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 10
 columns = 5
 
-[node name="InventorySlot" parent="Inventory/InventoryWindow/SlotContainer" instance=ExtResource("5_v4jo5")]
+[node name="InventorySlot" parent="CanvasLayer/Inventory/InventoryWindow/SlotContainer" instance=ExtResource("5_v4jo5")]
 layout_mode = 2
 
-[node name="InventorySlot2" parent="Inventory/InventoryWindow/SlotContainer" instance=ExtResource("5_v4jo5")]
+[node name="InventorySlot2" parent="CanvasLayer/Inventory/InventoryWindow/SlotContainer" instance=ExtResource("5_v4jo5")]
 layout_mode = 2
 
-[node name="InventorySlot3" parent="Inventory/InventoryWindow/SlotContainer" instance=ExtResource("5_v4jo5")]
+[node name="InventorySlot3" parent="CanvasLayer/Inventory/InventoryWindow/SlotContainer" instance=ExtResource("5_v4jo5")]
 layout_mode = 2
 
-[node name="InventorySlot4" parent="Inventory/InventoryWindow/SlotContainer" instance=ExtResource("5_v4jo5")]
+[node name="InventorySlot4" parent="CanvasLayer/Inventory/InventoryWindow/SlotContainer" instance=ExtResource("5_v4jo5")]
 layout_mode = 2
 
-[node name="InventorySlot5" parent="Inventory/InventoryWindow/SlotContainer" instance=ExtResource("5_v4jo5")]
+[node name="InventorySlot5" parent="CanvasLayer/Inventory/InventoryWindow/SlotContainer" instance=ExtResource("5_v4jo5")]
 layout_mode = 2
 
-[node name="InventorySlot6" parent="Inventory/InventoryWindow/SlotContainer" instance=ExtResource("5_v4jo5")]
+[node name="InventorySlot6" parent="CanvasLayer/Inventory/InventoryWindow/SlotContainer" instance=ExtResource("5_v4jo5")]
 layout_mode = 2
 
-[node name="InventorySlot7" parent="Inventory/InventoryWindow/SlotContainer" instance=ExtResource("5_v4jo5")]
+[node name="InventorySlot7" parent="CanvasLayer/Inventory/InventoryWindow/SlotContainer" instance=ExtResource("5_v4jo5")]
 layout_mode = 2
 
-[node name="InventorySlot8" parent="Inventory/InventoryWindow/SlotContainer" instance=ExtResource("5_v4jo5")]
+[node name="InventorySlot8" parent="CanvasLayer/Inventory/InventoryWindow/SlotContainer" instance=ExtResource("5_v4jo5")]
 layout_mode = 2
 
-[node name="InventorySlot9" parent="Inventory/InventoryWindow/SlotContainer" instance=ExtResource("5_v4jo5")]
+[node name="InventorySlot9" parent="CanvasLayer/Inventory/InventoryWindow/SlotContainer" instance=ExtResource("5_v4jo5")]
 layout_mode = 2
 
-[node name="InventorySlot10" parent="Inventory/InventoryWindow/SlotContainer" instance=ExtResource("5_v4jo5")]
+[node name="InventorySlot10" parent="CanvasLayer/Inventory/InventoryWindow/SlotContainer" instance=ExtResource("5_v4jo5")]
 layout_mode = 2
 
-[node name="InventorySlot11" parent="Inventory/InventoryWindow/SlotContainer" instance=ExtResource("5_v4jo5")]
+[node name="InventorySlot11" parent="CanvasLayer/Inventory/InventoryWindow/SlotContainer" instance=ExtResource("5_v4jo5")]
 layout_mode = 2
 
-[node name="InventorySlot12" parent="Inventory/InventoryWindow/SlotContainer" instance=ExtResource("5_v4jo5")]
+[node name="InventorySlot12" parent="CanvasLayer/Inventory/InventoryWindow/SlotContainer" instance=ExtResource("5_v4jo5")]
 layout_mode = 2
 
-[node name="InventorySlot13" parent="Inventory/InventoryWindow/SlotContainer" instance=ExtResource("5_v4jo5")]
+[node name="InventorySlot13" parent="CanvasLayer/Inventory/InventoryWindow/SlotContainer" instance=ExtResource("5_v4jo5")]
 layout_mode = 2
 
-[node name="InventorySlot14" parent="Inventory/InventoryWindow/SlotContainer" instance=ExtResource("5_v4jo5")]
+[node name="InventorySlot14" parent="CanvasLayer/Inventory/InventoryWindow/SlotContainer" instance=ExtResource("5_v4jo5")]
 layout_mode = 2
 
-[node name="InventorySlot15" parent="Inventory/InventoryWindow/SlotContainer" instance=ExtResource("5_v4jo5")]
+[node name="InventorySlot15" parent="CanvasLayer/Inventory/InventoryWindow/SlotContainer" instance=ExtResource("5_v4jo5")]
 layout_mode = 2
 
-[node name="InfoText" type="Label" parent="Inventory/InventoryWindow"]
+[node name="InfoText" type="Label" parent="CanvasLayer/Inventory/InventoryWindow"]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -241,12 +245,12 @@ label_settings = SubResource("LabelSettings_f1r3p")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Crafting" type="Node" parent="."]
+[node name="Crafting" type="Node" parent="CanvasLayer"]
 script = ExtResource("8_jfupr")
 crafting_recipe_ui_scene = ExtResource("8_fur7t")
 recipes = Array[Resource("res://Crafting System/crafting_recipe.gd")]([ExtResource("10_lwwgy")])
 
-[node name="CraftingWindow" type="Panel" parent="Crafting"]
+[node name="CraftingWindow" type="Panel" parent="CanvasLayer/Crafting"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -259,7 +263,7 @@ offset_bottom = 250.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="RecipeContainer" type="VBoxContainer" parent="Crafting/CraftingWindow"]
+[node name="RecipeContainer" type="VBoxContainer" parent="CanvasLayer/Crafting/CraftingWindow"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

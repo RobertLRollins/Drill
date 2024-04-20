@@ -2,7 +2,7 @@ extends Node
 
 @onready var window : Panel = get_node("CraftingWindow")
 @onready var ui_parent : VBoxContainer = get_node("CraftingWindow/RecipeContainer")
-@onready var coal_label = get_node("/root/Level/CoalLabel")
+@onready var coal_label = get_node("/root/Level/CanvasLayer/Control/CoalLabel")
 
 @export var crafting_recipe_ui_scene : PackedScene
 @export var recipes : Array[CraftingRecipe]

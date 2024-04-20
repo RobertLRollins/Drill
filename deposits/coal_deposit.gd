@@ -1,6 +1,6 @@
 extends Area2D
 
-@onready var coal_label = $"../CoalLabel"
+@onready var coal_label = $"../CanvasLayer/Control/CoalLabel"
 @export var item_name : String
 
 func _ready() -> void:

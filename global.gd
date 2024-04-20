@@ -4,7 +4,7 @@ var total_distance: int = 0
 var points: int = 0
 var max_speed: float = 0
 
-@onready var final_score_label = $"/root/Level/FinalScore"
+@onready var final_score_label = $"/root/Level/CanvasLayer/Control/FinalScore"
 
 signal on_give_player_item (item : Item, amount : int)
 

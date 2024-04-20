@@ -9,8 +9,8 @@ var velocity: Vector2 = Vector2.ZERO
 var last_multiple_600 = 0
 
 @onready var animation = $Sprite2D/DrillAnimation
-@onready var distance_label = $"../DistanceLabel"
-@onready var coal_label = $"../CoalLabel"
+@onready var distance_label = $"../CanvasLayer/Control/DistanceLabel"
+@onready var coal_label = $"../CanvasLayer/Control/CoalLabel"
 
 func _ready() -> void:
 	Global.max_speed = NORMAL_SPEED
@@ -58,7 +58,7 @@ func update_velocity_and_position(direction: Vector2, delta: float) -> void:
 		Global.on_remove_player_item.emit(item, 1)
 		if Global.total_coal < 1:
 				Global.max_speed = 0
-				Global.calculate_total_points($Inventory)
+				Global.calculate_total_points($CanvasLayer/Inventory)
 		
 # Manages the state of animations and particle systems based on movement
 func update_animation_state(direction: Vector2) -> void:

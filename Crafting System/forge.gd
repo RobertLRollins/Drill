@@ -6,7 +6,7 @@ func _on_area_entered(area):
 	var child
 	
 	if sibling:
-		child = sibling.get_node("Crafting")
+		child = sibling.get_node("CanvasLayer/Crafting")
 	
 	if child:
 		child.open()
@@ -19,7 +19,7 @@ func _on_area_exited(area):
 	var child
 	
 	if sibling:
-		child = sibling.get_node("Crafting")
+		child = sibling.get_node("CanvasLayer/Crafting")
 	
 	if child:
 		child.close()
