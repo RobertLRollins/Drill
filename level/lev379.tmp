@@ -7,14 +7,14 @@
 [ext_resource type="PackedScene" uid="uid://do5dhx13sqrwq" path="res://Crafting System/forge.tscn" id="5_slo5h"]
 [ext_resource type="Texture2D" uid="uid://b8wo315tae0r6" path="res://Level/Lava.png" id="6_7y0fh"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jrprr"]
-size = Vector2(3123, 20)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nlol2"]
+size = Vector2(3159, 62)
 
 [node name="Level" type="Node2D"]
 
 [node name="Drill" parent="." instance=ExtResource("1_u1s68")]
 z_index = 2
-position = Vector2(1497, 1059)
+position = Vector2(160, 422)
 
 [node name="Camera2D" type="Camera2D" parent="Drill"]
 limit_left = -250
@@ -36,7 +36,7 @@ scale = Vector2(0.155, 0.155)
 
 [node name="CoalDeposit3" parent="." instance=ExtResource("2_qh822")]
 z_index = 1
-position = Vector2(2709, 1575)
+position = Vector2(2780, 1832)
 rotation = 2.03505
 scale = Vector2(0.155, 0.155)
 
@@ -48,7 +48,7 @@ scale = Vector2(0.155, 0.155)
 
 [node name="CoalDeposit5" parent="." instance=ExtResource("2_qh822")]
 z_index = 1
-position = Vector2(773, 1165)
+position = Vector2(402, 1840)
 rotation = 2.03505
 scale = Vector2(0.155, 0.155)
 
@@ -63,29 +63,9 @@ z_index = 1
 position = Vector2(500, 412)
 scale = Vector2(0.155, 0.155)
 
-[node name="IronDeposit2" parent="." instance=ExtResource("4_yhvyk")]
-z_index = 1
-position = Vector2(2008, 697)
-scale = Vector2(0.155, 0.155)
-
-[node name="IronDeposit3" parent="." instance=ExtResource("4_yhvyk")]
-z_index = 1
-position = Vector2(244, 1787)
-scale = Vector2(0.155, 0.155)
-
-[node name="IronDeposit4" parent="." instance=ExtResource("4_yhvyk")]
-z_index = 1
-position = Vector2(2727, 1068)
-scale = Vector2(0.155, 0.155)
-
 [node name="Forge" parent="." instance=ExtResource("5_slo5h")]
 z_index = 1
-position = Vector2(237, 528)
-scale = Vector2(0.36, 0.36)
-
-[node name="Forge2" parent="." instance=ExtResource("5_slo5h")]
-z_index = 1
-position = Vector2(2301, 1836)
+position = Vector2(998, 438)
 scale = Vector2(0.36, 0.36)
 
 [node name="Ground" type="Node" parent="."]
@@ -516,32 +496,8 @@ theme_override_font_sizes/font_size = 60
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="StaticBody2D" type="Area2D" parent="." groups=["reset_areas"]]
-position = Vector2(-1, -17)
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(1548.5, 0)
-shape = SubResource("RectangleShape2D_jrprr")
-
-[node name="StaticBody2D2" type="Area2D" parent="." groups=["reset_areas"]]
-position = Vector2(-19, 2053)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(1548.5, 0)
-shape = SubResource("RectangleShape2D_jrprr")
-
-[node name="StaticBody2D3" type="Area2D" parent="." groups=["reset_areas"]]
-position = Vector2(3077, -542)
-rotation = 1.5708
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
-position = Vector2(1548.5, 0)
-shape = SubResource("RectangleShape2D_jrprr")
-
-[node name="StaticBody2D4" type="Area2D" parent="." groups=["reset_areas"]]
-position = Vector2(-17, -437)
-rotation = 1.5708
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
-position = Vector2(1548.5, 0)
-shape = SubResource("RectangleShape2D_jrprr")
+position = Vector2(1537.5, -21)
+shape = SubResource("RectangleShape2D_nlol2")
