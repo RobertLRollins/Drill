@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://bdnpn24ibf4n4"]
+
+[ext_resource type="Texture2D" uid="uid://dvro7ul076x3r" path="res://Items/copper.png" id="1_1bx02"]
+[ext_resource type="Script" path="res://Items/item.gd" id="1_eeulv"]
+
+[resource]
+script = ExtResource("1_eeulv")
+display_name = "Copper"
+icon = ExtResource("1_1bx02")
+max_stack_size = 64
+points = 1

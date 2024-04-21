@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://g0sj7aobdpgk"]
+
+[ext_resource type="Texture2D" uid="uid://c774pow710ena" path="res://Items/penny-farthing.png" id="1_dme6c"]
+[ext_resource type="Script" path="res://Items/item.gd" id="1_s4rk6"]
+
+[resource]
+script = ExtResource("1_s4rk6")
+display_name = "Penny Farthing"
+icon = ExtResource("1_dme6c")
+max_stack_size = 64
+points = 25

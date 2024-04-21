@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d4nyd0mjb846a"
-path="res://.godot/imported/knife.png-311f77bb04eba2d94b14f4a3e724c124.ctex"
+uid="uid://duyrrbk5ydiuk"
+path="res://.godot/imported/furnace.png-fa68604123b244100398436f8d23de20.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Items/knife.png"
-dest_files=["res://.godot/imported/knife.png-311f77bb04eba2d94b14f4a3e724c124.ctex"]
+source_file="res://Crafting System/furnace.png"
+dest_files=["res://.godot/imported/furnace.png-fa68604123b244100398436f8d23de20.ctex"]
 
 [params]
 

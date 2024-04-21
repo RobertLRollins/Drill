@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://c5mobvtw708mn"]
+
+[ext_resource type="Script" path="res://Items/item.gd" id="1_haohb"]
+[ext_resource type="Texture2D" uid="uid://jm6ehwt3cu1j" path="res://Items/automaton.png" id="1_neo0h"]
+
+[resource]
+script = ExtResource("1_haohb")
+display_name = "Automaton"
+icon = ExtResource("1_neo0h")
+max_stack_size = 64
+points = 45

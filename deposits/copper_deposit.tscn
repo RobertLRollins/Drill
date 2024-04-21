@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bx564v4s34302"]
+
+[ext_resource type="Script" path="res://Deposits/other_deposit.gd" id="1_axcwp"]
+[ext_resource type="Texture2D" uid="uid://dypewpxe3d2i7" path="res://Deposits/copper_deposit.png" id="2_0wygk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cabh7"]
+radius = 360.235
+
+[node name="CopperDeposit" type="Area2D"]
+script = ExtResource("1_axcwp")
+item_name = "copper"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_0wygk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_cabh7")

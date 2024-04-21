@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d4nyd0mjb846a"
-path="res://.godot/imported/knife.png-311f77bb04eba2d94b14f4a3e724c124.ctex"
+uid="uid://veao4b20togn"
+path="res://.godot/imported/copper_wire.png-fb731dadcd5ca675a1f116d9aceaf976.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Items/knife.png"
-dest_files=["res://.godot/imported/knife.png-311f77bb04eba2d94b14f4a3e724c124.ctex"]
+source_file="res://Items/copper_wire.png"
+dest_files=["res://.godot/imported/copper_wire.png-fb731dadcd5ca675a1f116d9aceaf976.ctex"]
 
 [params]
 

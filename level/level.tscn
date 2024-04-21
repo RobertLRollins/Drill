@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://b8ru7rbolrbti"]
+[gd_scene load_steps=9 format=3 uid="uid://b8ru7rbolrbti"]
 
 [ext_resource type="PackedScene" uid="uid://djkbfos7ivc5x" path="res://Drill/drill.tscn" id="1_u1s68"]
 [ext_resource type="PackedScene" uid="uid://ckqsone2qk0by" path="res://Deposits/coal_deposit.tscn" id="2_qh822"]
 [ext_resource type="Texture2D" uid="uid://bgvl4fj1e3x3r" path="res://Level/ground.tga" id="3_xkkt5"]
+[ext_resource type="PackedScene" uid="uid://bx564v4s34302" path="res://Deposits/copper_deposit.tscn" id="4_tnn6v"]
 [ext_resource type="PackedScene" uid="uid://uy0cv0sgblxh" path="res://Deposits/iron_deposit.tscn" id="4_yhvyk"]
 [ext_resource type="PackedScene" uid="uid://do5dhx13sqrwq" path="res://Crafting System/forge.tscn" id="5_slo5h"]
 [ext_resource type="Texture2D" uid="uid://b8wo315tae0r6" path="res://Level/Lava.png" id="6_7y0fh"]
@@ -77,6 +78,11 @@ scale = Vector2(0.155, 0.155)
 z_index = 1
 position = Vector2(2727, 1068)
 scale = Vector2(0.155, 0.155)
+
+[node name="CopperDeposit" parent="." instance=ExtResource("4_tnn6v")]
+z_index = 1
+position = Vector2(1344, 598)
+scale = Vector2(0.15, 0.15)
 
 [node name="Forge" parent="." instance=ExtResource("5_slo5h")]
 z_index = 1

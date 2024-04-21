@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://opiunimx5x8m"]
+
+[ext_resource type="Texture2D" uid="uid://veao4b20togn" path="res://Items/copper_wire.png" id="1_8njpc"]
+[ext_resource type="Script" path="res://Items/item.gd" id="1_pmu2b"]
+
+[resource]
+script = ExtResource("1_pmu2b")
+display_name = "Wire"
+icon = ExtResource("1_8njpc")
+max_stack_size = 64
+points = 3

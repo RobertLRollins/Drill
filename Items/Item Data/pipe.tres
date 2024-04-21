@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://bfxywjyofocdy"]
+
+[ext_resource type="Script" path="res://Items/item.gd" id="1_d5aqs"]
+[ext_resource type="Texture2D" uid="uid://bbffoneqq875" path="res://Items/pipe.png" id="1_g308x"]
+
+[resource]
+script = ExtResource("1_d5aqs")
+display_name = "Pipe"
+icon = ExtResource("1_g308x")
+max_stack_size = 64
+points = 4

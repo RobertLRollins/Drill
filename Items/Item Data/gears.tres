@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://pbyg8j5bkfu6"]
+
+[ext_resource type="Script" path="res://Items/item.gd" id="1_54ehh"]
+[ext_resource type="Texture2D" uid="uid://11enjvi4na2o" path="res://Items/gears.png" id="1_d70c2"]
+
+[resource]
+script = ExtResource("1_54ehh")
+display_name = "Gears"
+icon = ExtResource("1_d70c2")
+max_stack_size = 64
+points = 4
