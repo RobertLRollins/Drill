@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b8ru7rbolrbti"]
+[gd_scene load_steps=10 format=3 uid="uid://b8ru7rbolrbti"]
 
 [ext_resource type="PackedScene" uid="uid://djkbfos7ivc5x" path="res://Drill/drill.tscn" id="1_u1s68"]
 [ext_resource type="PackedScene" uid="uid://ckqsone2qk0by" path="res://Deposits/coal_deposit.tscn" id="2_qh822"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://uy0cv0sgblxh" path="res://Deposits/iron_deposit.tscn" id="4_yhvyk"]
 [ext_resource type="PackedScene" uid="uid://do5dhx13sqrwq" path="res://Crafting System/forge.tscn" id="5_slo5h"]
 [ext_resource type="Texture2D" uid="uid://b8wo315tae0r6" path="res://Level/Lava.png" id="6_7y0fh"]
+[ext_resource type="Script" path="res://Level/restart.gd" id="8_w6m0a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jrprr"]
 size = Vector2(3123, 20)
@@ -15,7 +16,7 @@ size = Vector2(3123, 20)
 
 [node name="Drill" parent="." instance=ExtResource("1_u1s68")]
 z_index = 2
-position = Vector2(1497, 1059)
+position = Vector2(1165, 980)
 
 [node name="Camera2D" type="Camera2D" parent="Drill"]
 limit_left = -250
@@ -492,6 +493,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("8_w6m0a")
 
 [node name="DistanceLabel" type="Label" parent="CanvasLayer/Control"]
 layout_mode = 0
@@ -522,6 +524,23 @@ theme_override_font_sizes/font_size = 60
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 470.0
+offset_top = 353.0
+offset_right = 676.0
+offset_bottom = 403.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/MarginContainer"]
+layout_mode = 2
+
+[node name="Restart" type="Button" parent="CanvasLayer/Control/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 30
+text = "Restart Game"
+
 [node name="StaticBody2D" type="Area2D" parent="." groups=["reset_areas"]]
 position = Vector2(-1, -17)
 
@@ -551,3 +570,5 @@ rotation = 1.5708
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
 position = Vector2(1548.5, 0)
 shape = SubResource("RectangleShape2D_jrprr")
+
+[connection signal="pressed" from="CanvasLayer/Control/MarginContainer/VBoxContainer/Restart" to="CanvasLayer/Control" method="_on_restart_pressed"]

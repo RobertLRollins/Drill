@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://djkbfos7ivc5x"]
+[gd_scene load_steps=26 format=3 uid="uid://djkbfos7ivc5x"]
 
 [ext_resource type="Texture2D" uid="uid://bj46uv1rja4cc" path="res://Drill/steam-drill-sprite-sheet.png" id="1_a37hl"]
 [ext_resource type="Script" path="res://Drill/drill.gd" id="2_dtqty"]
@@ -6,10 +6,14 @@
 [ext_resource type="Script" path="res://Inventory/inventory.gd" id="4_vdcfv"]
 [ext_resource type="Resource" uid="uid://droey66h0iyfo" path="res://Items/Item Data/coal.tres" id="5_di1x6"]
 [ext_resource type="PackedScene" uid="uid://csv4uprj8a4mb" path="res://Inventory/inventory_slot.tscn" id="5_v4jo5"]
-[ext_resource type="Resource" uid="uid://bry1ja82k2xbq" path="res://Items/Item Data/iron.tres" id="6_hv1ad"]
 [ext_resource type="PackedScene" uid="uid://c3a4sgjg56k7j" path="res://Crafting System/crafting_recipe_ui.tscn" id="8_fur7t"]
 [ext_resource type="Script" path="res://Crafting System/crafting.gd" id="8_jfupr"]
-[ext_resource type="Resource" uid="uid://cemaoa6w6nka6" path="res://Crafting System/Recipes/knife_recipe.tres" id="10_lwwgy"]
+[ext_resource type="Resource" uid="uid://c2ag2jr7qm2ef" path="res://Crafting System/Recipes/gears_recipe.tres" id="10_tj4f8"]
+[ext_resource type="Resource" uid="uid://cboefdevyn20g" path="res://Crafting System/Recipes/bolts_recipe.tres" id="11_0xe1o"]
+[ext_resource type="Resource" uid="uid://clahtj0405jjn" path="res://Crafting System/Recipes/wire_recipe.tres" id="11_2pikp"]
+[ext_resource type="Resource" uid="uid://74jf1u7aw1n1" path="res://Crafting System/Recipes/pipe_recipe.tres" id="12_0et3q"]
+[ext_resource type="Resource" uid="uid://dg7bypmwl1one" path="res://Crafting System/Recipes/rolled_steel_recipe.tres" id="13_ealsl"]
+[ext_resource type="Resource" uid="uid://ckqll3yafj6q4" path="res://Crafting System/Recipes/automaton_recipe.tres" id="16_6p3ht"]
 
 [sub_resource type="Animation" id="Animation_7hbwe"]
 length = 0.001
@@ -153,7 +157,7 @@ shape = SubResource("CircleShape2D_p2ftr")
 
 [node name="Inventory" type="Node" parent="CanvasLayer"]
 script = ExtResource("4_vdcfv")
-starter_items = Array[Resource("res://Items/item.gd")]([ExtResource("5_di1x6"), ExtResource("6_hv1ad"), ExtResource("6_hv1ad"), ExtResource("5_di1x6"), ExtResource("5_di1x6")])
+starter_items = Array[Resource("res://Items/item.gd")]([ExtResource("5_di1x6"), ExtResource("5_di1x6"), ExtResource("5_di1x6")])
 
 [node name="InventoryWindow" type="Panel" parent="CanvasLayer/Inventory"]
 anchors_preset = 8
@@ -248,7 +252,7 @@ vertical_alignment = 1
 [node name="Crafting" type="Node" parent="CanvasLayer"]
 script = ExtResource("8_jfupr")
 crafting_recipe_ui_scene = ExtResource("8_fur7t")
-recipes = Array[Resource("res://Crafting System/crafting_recipe.gd")]([ExtResource("10_lwwgy")])
+recipes = Array[Resource("res://Crafting System/crafting_recipe.gd")]([ExtResource("11_0xe1o"), ExtResource("10_tj4f8"), ExtResource("11_2pikp"), ExtResource("12_0et3q"), ExtResource("13_ealsl"), ExtResource("16_6p3ht")])
 
 [node name="CraftingWindow" type="Panel" parent="CanvasLayer/Crafting"]
 anchors_preset = 8
@@ -257,9 +261,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -250.0
-offset_top = -250.0
+offset_top = -324.0
 offset_right = 250.0
-offset_bottom = 250.0
+offset_bottom = 376.0
 grow_horizontal = 2
 grow_vertical = 2
 

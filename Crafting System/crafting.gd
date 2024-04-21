@@ -38,7 +38,10 @@ func craft(recipe: CraftingRecipe):
 	open()
 
 func _process(delta):
-	if Input.is_action_just_pressed("crafting"):
+	if Global.total_coal < 1:
+		close()
+	
+	elif Input.is_action_just_pressed("crafting"):
 		if window.visible:
 			close()
 		else:
@@ -46,11 +49,11 @@ func _process(delta):
 
 func open():
 	window.visible = true
-	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	#Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	
 	for recipe in recipe_uis:
 		recipe.update_recipe(inventory)
 
 func close():
 	window.visible = false
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	#Input.mouse_mode = Input.MOUSE_MODE_CAPTURED

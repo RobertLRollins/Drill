@@ -8,4 +8,4 @@ script = ExtResource("1_haohb")
 display_name = "Automaton"
 icon = ExtResource("1_neo0h")
 max_stack_size = 64
-points = 45
+points = 55

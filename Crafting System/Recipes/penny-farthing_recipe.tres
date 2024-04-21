@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="CraftingRecipe" load_steps=12 format=3 uid="uid://0o4vc7wraspn"]
+
+[ext_resource type="Resource" uid="uid://g0sj7aobdpgk" path="res://Items/Item Data/penny-farthing.tres" id="1_47i0p"]
+[ext_resource type="Script" path="res://Crafting System/crafting_recipe.gd" id="1_rerhq"]
+[ext_resource type="Resource" uid="uid://droey66h0iyfo" path="res://Items/Item Data/coal.tres" id="2_tudlf"]
+[ext_resource type="Script" path="res://Crafting System/crafting_recipe_requirment.gd" id="3_6017w"]
+[ext_resource type="Resource" uid="uid://bfxywjyofocdy" path="res://Items/Item Data/pipe.tres" id="4_1qo3t"]
+[ext_resource type="Resource" uid="uid://d1am8mu4wqtky" path="res://Items/Item Data/bolts.tres" id="5_c6ni2"]
+[ext_resource type="Resource" uid="uid://pbyg8j5bkfu6" path="res://Items/Item Data/gears.tres" id="6_l08je"]
+
+[sub_resource type="Resource" id="Resource_aurmo"]
+script = ExtResource("3_6017w")
+item = ExtResource("2_tudlf")
+quantity = 3
+
+[sub_resource type="Resource" id="Resource_tuxit"]
+script = ExtResource("3_6017w")
+item = ExtResource("4_1qo3t")
+quantity = 2
+
+[sub_resource type="Resource" id="Resource_hue7i"]
+script = ExtResource("3_6017w")
+item = ExtResource("5_c6ni2")
+quantity = 2
+
+[sub_resource type="Resource" id="Resource_bwtwj"]
+script = ExtResource("3_6017w")
+item = ExtResource("6_l08je")
+quantity = 1
+
+[resource]
+script = ExtResource("1_rerhq")
+item = ExtResource("1_47i0p")
+requirements = Array[ExtResource("3_6017w")]([SubResource("Resource_aurmo"), SubResource("Resource_tuxit"), SubResource("Resource_hue7i"), SubResource("Resource_bwtwj")])

@@ -22,16 +22,18 @@ func _ready ():
 
 
 func _process (delta):
-	if Input.is_action_just_pressed("inventory"):
-		toggle_window(!window.visible)
+	if Global.total_coal < 1:
+		toggle_window(false)
+	elif Input.is_action_just_pressed("inventory"):
+		toggle_window(not window.visible)
 
 func toggle_window (open : bool):
 	window.visible = open
 	
-	if open:
-		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-	else:
-		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	#if open:
+		#Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	#else:
+		#Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func on_give_player_item (item : Item, amount : int):
 	for i in range(amount):

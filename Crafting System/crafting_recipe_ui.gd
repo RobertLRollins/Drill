@@ -24,9 +24,19 @@ func update_recipe(inventory : Inventory):
 	craft_button.visible = can_craft
 	recipe_text.text = recipe.item.display_name + "\n"
 	
+	var i = 0  # Counter to keep track of the items
 	for req in recipe.requirements:
-		recipe_text.text += req.item.display_name + " x" + str(req.quantity) + "\n"
-	
+		if i % 2 == 0 and i > 0:  # Check if it's the start of a new line (every 2 items)
+			recipe_text.text += "\n"  # Start a new line
+		recipe_text.text += req.item.display_name + " x" + str(req.quantity)
+		if i % 2 == 0:  # Check if it's the first column
+			recipe_text.text += "    "  # Add 4 spaces of column spacing
+		i += 1
+
+# Ensure to add a newline at the end if the total number of items is odd
+	if i % 2 != 0:
+		recipe_text.text += "\n"
+
 	item_icon.texture = recipe.item.icon
 
 func _on_craft_button_pressed():

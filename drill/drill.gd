@@ -27,6 +27,8 @@ func _ready() -> void:
 	add_child(reset_timer)
 	add_child(flash_timer)
 	setup_timers()
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	Global.final_score_label = $"../CanvasLayer/Control/FinalScore"
 
 func setup_timers() -> void:
 	reset_timer.wait_time = RESET_DELAY
@@ -121,3 +123,7 @@ func _on_reset_timer_timeout() -> void:
 
 func _on_flash_timer_timeout() -> void:
 	visible = !visible  # Toggle visibility
+
+
+func _on_start_pressed():
+	pass # Replace with function body.

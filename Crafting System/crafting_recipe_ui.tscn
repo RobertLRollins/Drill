@@ -5,10 +5,9 @@
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ofglt"]
 
 [node name="CraftingRecipeUI" type="Panel"]
-custom_minimum_size = Vector2(0, 80)
+custom_minimum_size = Vector2(0, 100)
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 68.0
 grow_horizontal = 2
 script = ExtResource("1_16ood")
 
@@ -52,6 +51,7 @@ offset_right = -29.0
 offset_bottom = 16.0
 grow_horizontal = 0
 grow_vertical = 2
+mouse_default_cursor_shape = 2
 text = "Craft"
 
 [connection signal="pressed" from="CraftButton" to="." method="_on_craft_button_pressed"]

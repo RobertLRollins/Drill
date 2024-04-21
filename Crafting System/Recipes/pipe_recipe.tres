@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="CraftingRecipe" load_steps=8 format=3 uid="uid://74jf1u7aw1n1"]
+
+[ext_resource type="Resource" uid="uid://bfxywjyofocdy" path="res://Items/Item Data/pipe.tres" id="1_4wv6c"]
+[ext_resource type="Script" path="res://Crafting System/crafting_recipe.gd" id="1_wr5l2"]
+[ext_resource type="Resource" uid="uid://droey66h0iyfo" path="res://Items/Item Data/coal.tres" id="2_anjx8"]
+[ext_resource type="Script" path="res://Crafting System/crafting_recipe_requirment.gd" id="3_5wcyo"]
+[ext_resource type="Resource" uid="uid://bdnpn24ibf4n4" path="res://Items/Item Data/copper.tres" id="4_pvf07"]
+
+[sub_resource type="Resource" id="Resource_6qbk1"]
+script = ExtResource("3_5wcyo")
+item = ExtResource("2_anjx8")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_37rwm"]
+script = ExtResource("3_5wcyo")
+item = ExtResource("4_pvf07")
+quantity = 2
+
+[resource]
+script = ExtResource("1_wr5l2")
+item = ExtResource("1_4wv6c")
+requirements = Array[ExtResource("3_5wcyo")]([SubResource("Resource_6qbk1"), SubResource("Resource_37rwm")])
