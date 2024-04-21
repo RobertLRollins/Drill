@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://dslkeci7vyvgu"]
+[gd_scene load_steps=4 format=3 uid="uid://dslkeci7vyvgu"]
 
 [ext_resource type="Script" path="res://menu.gd" id="1_x6rkh"]
+[ext_resource type="Texture2D" uid="uid://bxmsmjx2i7ee1" path="res://Crafting System/anvil.png" id="2_q8thq"]
+[ext_resource type="Texture2D" uid="uid://duyrrbk5ydiuk" path="res://Crafting System/furnace.png" id="3_6jn0h"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -28,10 +30,22 @@ grow_vertical = 2
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 60
+text = "Fuel and Forge"
+horizontal_alignment = 1
+
 [node name="Start" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+size_flags_vertical = 4
 mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 text = "Start Game"
 
@@ -40,5 +54,16 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "Controls and Instructions Below"
 horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Anvil" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(343, 322)
+texture = ExtResource("2_q8thq")
+
+[node name="Furnace" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(844, 306)
+texture = ExtResource("3_6jn0h")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]

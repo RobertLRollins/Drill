@@ -16,7 +16,7 @@ size = Vector2(3123, 20)
 
 [node name="Drill" parent="." instance=ExtResource("1_u1s68")]
 z_index = 2
-position = Vector2(1165, 980)
+position = Vector2(1377, 950)
 
 [node name="Camera2D" type="Camera2D" parent="Drill"]
 limit_left = -250
@@ -50,13 +50,31 @@ scale = Vector2(0.155, 0.155)
 
 [node name="CoalDeposit5" parent="." instance=ExtResource("2_qh822")]
 z_index = 1
-position = Vector2(773, 1165)
+position = Vector2(930, 1199)
 rotation = 2.03505
 scale = Vector2(0.155, 0.155)
 
 [node name="CoalDeposit6" parent="." instance=ExtResource("2_qh822")]
 z_index = 1
 position = Vector2(286, 1099)
+rotation = 2.03505
+scale = Vector2(0.155, 0.155)
+
+[node name="CoalDeposit7" parent="." instance=ExtResource("2_qh822")]
+z_index = 1
+position = Vector2(795, 1773)
+rotation = 2.03505
+scale = Vector2(0.155, 0.155)
+
+[node name="CoalDeposit8" parent="." instance=ExtResource("2_qh822")]
+z_index = 1
+position = Vector2(2392, 1002)
+rotation = 2.03505
+scale = Vector2(0.155, 0.155)
+
+[node name="CoalDeposit9" parent="." instance=ExtResource("2_qh822")]
+z_index = 1
+position = Vector2(1502, 1218)
 rotation = 2.03505
 scale = Vector2(0.155, 0.155)
 
@@ -80,9 +98,44 @@ z_index = 1
 position = Vector2(2727, 1068)
 scale = Vector2(0.155, 0.155)
 
+[node name="IronDeposit5" parent="." instance=ExtResource("4_yhvyk")]
+z_index = 1
+position = Vector2(434, 208)
+scale = Vector2(0.155, 0.155)
+
+[node name="IronDeposit6" parent="." instance=ExtResource("4_yhvyk")]
+z_index = 1
+position = Vector2(494, 1475)
+scale = Vector2(0.155, 0.155)
+
 [node name="CopperDeposit" parent="." instance=ExtResource("4_tnn6v")]
 z_index = 1
 position = Vector2(1344, 598)
+scale = Vector2(0.15, 0.15)
+
+[node name="CopperDeposit2" parent="." instance=ExtResource("4_tnn6v")]
+z_index = 1
+position = Vector2(2056, 297)
+scale = Vector2(0.15, 0.15)
+
+[node name="CopperDeposit3" parent="." instance=ExtResource("4_tnn6v")]
+z_index = 1
+position = Vector2(2344, 1674)
+scale = Vector2(0.15, 0.15)
+
+[node name="CopperDeposit4" parent="." instance=ExtResource("4_tnn6v")]
+z_index = 1
+position = Vector2(1988, 1221)
+scale = Vector2(0.15, 0.15)
+
+[node name="CopperDeposit5" parent="." instance=ExtResource("4_tnn6v")]
+z_index = 1
+position = Vector2(573, 823)
+scale = Vector2(0.15, 0.15)
+
+[node name="CopperDeposit6" parent="." instance=ExtResource("4_tnn6v")]
+z_index = 1
+position = Vector2(873, 318)
 scale = Vector2(0.15, 0.15)
 
 [node name="Forge" parent="." instance=ExtResource("5_slo5h")]
@@ -92,7 +145,12 @@ scale = Vector2(0.36, 0.36)
 
 [node name="Forge2" parent="." instance=ExtResource("5_slo5h")]
 z_index = 1
-position = Vector2(2301, 1836)
+position = Vector2(1195, 1785)
+scale = Vector2(0.36, 0.36)
+
+[node name="Forge3" parent="." instance=ExtResource("5_slo5h")]
+z_index = 1
+position = Vector2(2577, 620)
 scale = Vector2(0.36, 0.36)
 
 [node name="Ground" type="Node" parent="."]
@@ -517,7 +575,7 @@ offset_left = 369.0
 offset_top = 256.0
 offset_right = 429.0
 offset_bottom = 339.0
-theme_override_colors/font_color = Color(1, 0.0901961, 0.0588235, 1)
+theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 60
@@ -538,25 +596,27 @@ layout_mode = 2
 visible = false
 layout_mode = 2
 mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 text = "Restart Game"
 
 [node name="StaticBody2D" type="Area2D" parent="." groups=["reset_areas"]]
-position = Vector2(-1, -17)
+position = Vector2(-9, -59)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(1548.5, 0)
 shape = SubResource("RectangleShape2D_jrprr")
 
 [node name="StaticBody2D2" type="Area2D" parent="." groups=["reset_areas"]]
-position = Vector2(-19, 2053)
+position = Vector2(-9, 2101)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
 position = Vector2(1548.5, 0)
 shape = SubResource("RectangleShape2D_jrprr")
 
 [node name="StaticBody2D3" type="Area2D" parent="." groups=["reset_areas"]]
-position = Vector2(3077, -542)
+position = Vector2(3115, -490)
 rotation = 1.5708
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
@@ -564,7 +624,7 @@ position = Vector2(1548.5, 0)
 shape = SubResource("RectangleShape2D_jrprr")
 
 [node name="StaticBody2D4" type="Area2D" parent="." groups=["reset_areas"]]
-position = Vector2(-17, -437)
+position = Vector2(-55, -423)
 rotation = 1.5708
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
