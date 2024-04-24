@@ -10,7 +10,7 @@ func _on_area_entered(area_that_entered: Area2D) -> void:
 	Global.on_give_player_item.emit(item, 3)
 	
 	
-	var explosion_scene = load("res://deposits/explosion_particles.tscn")
+	var explosion_scene = load("res://Deposits/explosion_particles.tscn")
 	var new_node = explosion_scene.instantiate()
 	new_node.position = self.position
 	new_node.emitting = true

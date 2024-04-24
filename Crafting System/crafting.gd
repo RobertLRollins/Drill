@@ -49,11 +49,9 @@ func _process(delta):
 
 func open():
 	window.visible = true
-	#Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	
 	for recipe in recipe_uis:
 		recipe.update_recipe(inventory)
 
 func close():
 	window.visible = false
-	#Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
